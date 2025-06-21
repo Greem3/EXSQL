@@ -1,0 +1,21 @@
+
+start: statement+
+
+OBJECT_NAME: /[a-zA-Z_][a-zA-Z0-9_]*/
+CREATE_QUERY: "CREATE"
+UPDATE_QUERY: "UPDATE"
+DROP_QUERY: "DROP"
+
+statement: create_table
+
+table_stmt: create_table
+
+create_table: CREATE_QUERY "TABLE" OBJECT_NAME field_block subtype?
+
+subtype: "SUBTYPE OF" "(" OBJECT_NAME ")"
+
+field_block
+
+%import common.WS
+%ignore WS
+%ignore /\/\/.*/ // Comentarios

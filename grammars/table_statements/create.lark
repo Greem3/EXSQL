@@ -1,0 +1,5 @@
+%import common (OBJECT_NAME, CREATE_QUERY, field_block)
+
+create_table: CREATE_QUERY "TABLE" OBJECT_NAME field_block subtype?
+
+subtype: "SUBTYPE OF" "(" OBJECT_NAME ")"

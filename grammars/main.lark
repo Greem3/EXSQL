@@ -1,0 +1,5 @@
+%import table_statements.base (table_stmt)
+
+start: statement+
+
+statement: table_stmt

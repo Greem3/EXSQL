@@ -1,0 +1,3 @@
+%import .create (create_table)
+
+table_stmt: create_table
