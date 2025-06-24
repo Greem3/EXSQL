@@ -1,0 +1,5 @@
+[login]
+user = postgres
+password =
+server = localhost
+port = 5432

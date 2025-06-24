@@ -6,6 +6,7 @@ from src.configmanager import ConfigManager
 from src.usepassword import use_password
 from src.psql import Psql
 from common.schemas import *
+from rich import print
 
 if not os.path.exists('config.ini'):
     
