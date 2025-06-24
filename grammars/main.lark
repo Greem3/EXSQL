@@ -1,5 +1,25 @@
-%import table_statements.base (table_stmt)
-
 start: statement+
 
+OBJECT_NAME: /[a-zA-Z_][a-zA-Z0-9_]*/
+
+TYPE: "int"|"string"|"boolean"
+
 statement: table_stmt
+
+
+// TABLE STATEMENT
+
+table_stmt: create_table
+
+create_table: "CREATE TABLE" OBJECT_NAME field_block subtype?
+drop_table: "DROP TABLE" OBJECT_NAME
+
+subtype: "SUBTYPE OF" "(" OBJECT_NAME ")"
+
+field_block: "(" field* ")"
+
+field: OBJECT_NAME TYPE ","|";"
+
+%import common.WS
+%ignore WS
+%ignore /\/\/.*/ // Comments

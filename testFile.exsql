@@ -1,0 +1,10 @@
+
+
+CREATE TABLE cheese (
+    id int,
+    name string,
+)
+
+CREATE TABLE pizza (
+    out_date boolean
+) SUBTYPE OF (cheese)

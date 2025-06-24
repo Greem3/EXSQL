@@ -3,13 +3,11 @@ from lark import Lark, Transformer, v_args
 from transformers.postgres import PostgresTransformer
 import os
 
-os.chdir("./grammars")
-
-parser = Lark.open('main.lark', start="start")
+parser = Lark.open('grammars/main.lark', start="start")
 
 #file_to_open = input()
 
-with open(f"../testFile.sqle") as f:
+with open(f"testFile.exsql") as f:
     source_code = f.read()
 
 tree = parser.parse(source_code)
